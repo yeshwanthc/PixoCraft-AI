@@ -19,6 +19,7 @@ import { Button } from "../ui/button";
 const MobileNav = () => {
   const pathname = usePathname();
   return (
+    //mobile nav
     <header className="header">
       <Link href="/" className="flex items-center gap-2">
         <Image
@@ -59,13 +60,16 @@ const MobileNav = () => {
                         isActive && "gradient-text"
                       } p-18 flex whitespace-nowrap text-dark-700`}
                     >
-                      <Link href={link.route} className="sidebar-link cursor-pointer">
-                        <Image
+                      <Link
+                        href={link.route}
+                        className="sidebar-link cursor-pointer"
+                      >
+                        {/* <Image
                           src={link.icon}
                           alt="Icon"
                           width={24}
                           height={24}
-                        />
+                        /> */}
                         {link.label}
                       </Link>
                     </li>
@@ -76,10 +80,10 @@ const MobileNav = () => {
           </Sheet>
         </SignedIn>
         <SignedOut>
-            <Button asChild className="button bg-purple-gradient bg-cover">
-              <Link href="/sign-in">Login</Link>
-            </Button>
-          </SignedOut>
+          <Button asChild className="button bg-purple-gradient bg-cover">
+            <Link href="/sign-in">Login</Link>
+          </Button>
+        </SignedOut>
       </nav>
     </header>
   );
